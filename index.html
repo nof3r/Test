@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaploHub • DNA Haplogroup Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .dna-bg { background: linear-gradient(135deg, #0a0a2a 0%, #001122 100%); }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 20px 25px -5px rgb(16 185 129); }
+    </style>
+</head>
+<body class="dna-bg text-white">
+    <!-- NAVBAR -->
+    <nav class="bg-black/70 backdrop-blur-md border-b border-emerald-500/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-dna text-3xl text-emerald-400"></i>
+                <h1 class="title-font text-3xl tracking-tighter">HaploHub</h1>
+            </div>
+            <div class="flex gap-8 text-sm font-medium">
+                <a href="#learn" class="hover:text-emerald-400 transition">Learn</a>
+                <a href="#ydna" class="hover:text-emerald-400 transition">Y-DNA</a>
+                <a href="#mtdna" class="hover:text-emerald-400 transition">mtDNA</a>
+                <a href="#maps" class="hover:text-emerald-400 transition">Maps</a>
+                <a href="#resources" class="hover:text-emerald-400 transition">Resources</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="max-w-7xl mx-auto px-6 pt-20 pb-16 flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2">
+            <div class="inline-flex items-center gap-2 bg-emerald-900/30 text-emerald-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
+                <i class="fa-solid fa-dna animate-pulse"></i>
+                TRACE YOUR ANCESTORS
+            </div>
+            <h2 class="title-font text-6xl lg:text-7xl leading-none tracking-tighter mb-6">
+                UNLOCK YOUR<br>GENETIC STORY
+            </h2>
+            <p class="text-xl text-gray-300 max-w-md mb-10">
+                Explore Y-DNA &amp; mtDNA haplogroups • Migration maps • Ancient origins • Famous lineages
+            </p>
+            <a href="#ydna" class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl text-lg transition">
+                Start Exploring Haplogroups
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="lg:w-1/2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/DNA_structure.svg/1200px-DNA_structure.svg.png" alt="Glowing DNA Double Helix" class="w-full drop-shadow-2xl rotate-12">
+        </div>
+    </header>
+
+    <!-- WHAT ARE HAPLOGROUPS -->
+    <section id="learn" class="max-w-7xl mx-auto px-6 py-20 border-t border-emerald-500/20">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="title-font text-5xl mb-6">What is a Haplogroup?</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    A haplogroup is a group of people who share a common ancestor on either the direct paternal (Y-DNA) or maternal (mtDNA) line. 
+                    These groups are defined by specific mutations in your DNA that happened thousands of years ago.
+                </p>
+                <div class="mt-8 flex gap-6">
+                    <div class="flex-1 bg-white/5 p-6 rounded-3xl">
+                        <div class="text-emerald-400 text-2xl mb-3"><i class="fa-solid fa-mars"></i></div>
+                        <h4 class="font-semibold text-xl">Y-DNA Haplogroups</h4>
+                        <p class="text-sm text-gray-400">Trace your father’s father’s… father — back 200,000+ years</p>
+                    </div>
+                    <div class="flex-1 bg-white/5 p-6 rounded-3xl">
+                        <div class="text-pink-400 text-2xl mb-3"><i class="fa-solid fa-venus"></i></div>
+                        <h4 class="font-semibold text-xl">mtDNA Haplogroups</h4>
+                        <p class="text-sm text-gray-400">Trace your mother’s mother’s… mother — back to “Mitochondrial Eve”</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-gray-300 text-lg leading-relaxed space-y-6">
+                <p>Every human alive today belongs to one of these deep ancestral clans. Your haplogroup tells you where your ancient ancestors lived, how they migrated across continents, and which famous historical figures share your line.</p>
+                <p class="text-emerald-300 font-medium">No two haplogroups are the same — yours is a unique chapter in human history.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Y-DNA SECTION -->
+    <section id="ydna" class="max-w-7xl mx-auto px-6 py-20 bg-black/40">
+        <h2 class="title-font text-5xl mb-4 text-center">Major Y-DNA Haplogroups</h2>
+        <p class="text-center text-emerald-300 mb-12">Paternal lineages • Click any card for details</p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div onclick="showModal('r1b')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer">
+                <div class="text-4xl mb-4">🇪🇺</div>
+                <h3 class="text-2xl font-semibold">R1b</h3>
+                <p class="text-emerald-300">Western Europe • ~70% in Ireland/Spain</p>
+                <p class="text-sm text-gray-400 mt-4">Indo-European steppe origin • Common in Western Europe</p>
+            </div>
+            <div onclick="showModal('r1a')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer">
+                <div class="text-4xl mb-4">🇷🇺</div>
+                <h3 class="text-2xl font-semibold">R1a</h3>
+                <p class="text-emerald-300">Eastern Europe &amp; Central Asia</p>
+                <p class="text-sm text-gray-400 mt-4">Indo-Iranian &amp; Slavic peoples</p>
+            </div>
+            <div onclick="showModal('i1')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer">
+                <div class="text-4xl mb-4">🇸🇪</div>
+                <h3 class="text-2xl font-semibold">I1</h3>
+                <p class="text-emerald-300">Scandinavia &amp; Germanic</p>
+                <p class="text-sm text-gray-400 mt-4">Viking-era lineages</p>
+            </div>
+            <div onclick="showModal('e1b1b')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer">
+                <div class="text-4xl mb-4">🇪🇬</div>
+                <h3 class="text-2xl font-semibold">E1b1b</h3>
+                <p class="text-emerald-300">North Africa &amp; Horn of Africa</p>
+                <p class="text-sm text-gray-400 mt-4">Berber &amp; ancient Egyptian roots</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- mtDNA SECTION -->
+    <section id="mtdna" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="title-font text-5xl mb-4 text-center">Major mtDNA Haplogroups</h2>
+        <p class="text-center text-pink-300 mb-12">Maternal lineages</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div onclick="showModal('h')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer">
+                <div class="text-4xl mb-4">🇪🇺</div>
+                <h3 class="text-2xl font-semibold">H</h3>
+                <p class="text-pink-300">~40% of Europeans</p>
+                <p class="text-sm text-gray-400 mt-4">Most common in Europe • Originated near the Caspian Sea</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPS -->
+    <section id="maps" class="max-w-7xl mx-auto px-6 py-20 bg-black/40">
+        <h2 class="title-font text-5xl mb-12 text-center">Ancient Migration Maps</h2>
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl mb-4 flex items-center gap-3"><i class="fa-solid fa-mars text-emerald-400"></i> Y-DNA World Map</h3>
+                <img src="https://www.yourdnaguide.com/wp-content/uploads/2021/05/ydna-mtdna-map.jpg" alt="Y-DNA Haplogroup World Map" class="w-full rounded-3xl border border-emerald-500/30 shadow-2xl">
+            </div>
+            <div>
+                <h3 class="text-2xl mb-4 flex items-center gap-3"><i class="fa-solid fa-venus text-pink-400"></i> Human Migration Map</h3>
+                <img src="https://education.nationalgeographic.org/wp-content/uploads/2023/08/human-migration-map.jpg" alt="Human Migration Map" class="w-full rounded-3xl border border-emerald-500/30 shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="title-font text-5xl text-center mb-12">Ready to Discover Your Haplogroup?</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="https://www.familytreedna.com/" target="_blank" class="bg-white/10 hover:bg-white/20 px-8 py-6 rounded-3xl text-center w-64">FamilyTreeDNA</a>
+            <a href="https://www.23andme.com/" target="_blank" class="bg-white/10 hover:bg-white/20 px-8 py-6 rounded-3xl text-center w-64">23andMe</a>
+            <a href="https://www.ancestry.com/dna/" target="_blank" class="bg-white/10 hover:bg-white/20 px-8 py-6 rounded-3xl text-center w-64">AncestryDNA</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 text-center text-sm text-gray-400">
+        <p>Made with ❤️ for DNA enthusiasts • Educational use only</p>
+        <p class="mt-4">Host it free on GitHub Pages</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div onclick="if(event.target.id==='modal')hideModal()" class="bg-zinc-900 rounded-3xl max-w-lg w-full mx-4 p-8">
+            <div id="modal-content" class="space-y-6"></div>
+            <button onclick="hideModal()" class="mt-8 w-full py-4 bg-emerald-500 text-black font-semibold rounded-2xl">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal(haplo) {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            let html = '';
+            if (haplo === 'r1b') html = `<h2 class="text-4xl font-bold">R1b</h2><p class="text-emerald-400">Western European paternal line</p><p class="text-lg">Originated ~22,000 years ago. Dominant in Western Europe.</p>`;
+            else if (haplo === 'r1a') html = `<h2 class="text-4xl font-bold">R1a</h2><p class="text-emerald-400">Eastern European &amp; Indo-Iranian</p><p class="text-lg">Common among Slavs and Central Asians.</p>`;
+            else if (haplo === 'i1') html = `<h2 class="text-4xl font-bold">I1</h2><p class="text-emerald-400">Scandinavian / Germanic</p><p class="text-lg">Strongly linked to Viking populations.</p>`;
+            else if (haplo === 'e1b1b') html = `<h2 class="text-4xl font-bold">E1b1b</h2><p class="text-emerald-400">North African &amp; Mediterranean</p><p class="text-lg">Common in Berbers and ancient Egyptians.</p>`;
+            else if (haplo === 'h') html = `<h2 class="text-4xl font-bold">H</h2><p class="text-pink-400">Europe’s most common maternal line (~40%)</p><p class="text-lg">Originated near the Caspian Sea ~20,000–25,000 years ago.</p>`;
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
+        }
+        function hideModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+        tailwind.config = { content: [], theme: { extend: {} } };
+    </script>
+</body>
+</html>
