@@ -56,9 +56,9 @@
                 UNLOCK YOUR<br>GENETIC STORY
             </h2>
             <p class="text-xl text-gray-300 max-w-md mb-10">
-                Y-DNA & mtDNA haplogroups & subclades • Autosomal Analysis • Migration maps • PCA plot
+                Major Y-DNA root haplogroups & subclades • mtDNA lineages • Migration maps
             </p>
-            <!-- Big Upload button in hero section -->
+            <!-- Big Upload button in hero -->
             <button onclick="document.getElementById('dna-upload').click()" 
                     class="upload-btn flex items-center gap-3 shadow-xl">
                 <i class="fa-solid fa-upload"></i>
@@ -80,7 +80,7 @@
             </div>
             <div class="text-gray-300 text-lg leading-relaxed">
                 <p>Click a root to see its major subclades. Tap any subclade to expand details and links.</p>
-                <!-- Explore Root Haplogroups button placed here -->
+                <!-- Explore Root Haplogroups button -->
                 <a href="#ydna" 
                    class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl text-lg mt-8 transition">
                     Explore Root Haplogroups
@@ -216,18 +216,34 @@
             
             let title = root + " Haplogroup";
             let ancestral = "";
-            let mapUrl = "https://upload.wikimedia.org/wikipedia/commons/c/ca/World_Map_of_Y-DNA_Haplogroups.png";
+            let mapUrl = "";
 
-            if (root === "R") ancestral = "Ancestral Origin: Ancient North Eurasians of Siberia";
-            else if (root === "E") ancestral = "Ancestral Origin: Ancestral North Africans & AEA";
-            else if (root === "T") ancestral = "Ancestral Origin: Levant PPNB";
-            else if (root === "J") ancestral = "Ancestral Origin: Caucasus Hunter-gatherers & Zagros Farmers";
-            else if (root === "G") ancestral = "Ancestral Origin: Anatolian Neolithic Farmers";
-            else if (root === "H") ancestral = "Ancestral Origin: Mostly AASI";
+            if (root === "R") {
+                ancestral = "Ancestral Origin: Ancient North Eurasians of Siberia";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Haplogroup_R1_distribution.png/800px-Haplogroup_R1_distribution.png";
+            } else if (root === "E") {
+                ancestral = "Ancestral Origin: Ancestral North Africans & AEA";
+                mapUrl = "https://www.eupedia.com/images/content/Haplogroup_E1b1b.png";
+            } else if (root === "T") {
+                ancestral = "Ancestral Origin: Levant PPNB";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Haplogroup_T_distribution.png/800px-Haplogroup_T_distribution.png";
+            } else if (root === "J") {
+                ancestral = "Ancestral Origin: Caucasus Hunter-gatherers & Zagros Farmers";
+                mapUrl = "https://www.eupedia.com/images/content/Haplogroup_J.png";
+            } else if (root === "G") {
+                ancestral = "Ancestral Origin: Anatolian Neolithic Farmers";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Haplogroup_G_distribution.png/800px-Haplogroup_G_distribution.png";
+            } else if (root === "H") {
+                ancestral = "Ancestral Origin: Mostly AASI";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Haplogroup_H_distribution.png/800px-Haplogroup_H_distribution.png";
+            }
 
             let html = `<h2 class="text-4xl font-bold mb-1">${title}</h2>`;
             html += `<p class="ancestral text-lg mb-4">${ancestral}</p>`;
-            html += `<img src="${mapUrl}" alt="${root} Migration Map" class="w-full rounded-2xl border border-emerald-500/30 mb-6 shadow-xl">`;
+            
+            // Specific map for the root
+            html += `<img src="${mapUrl}" alt="${root} Distribution Map" class="w-full rounded-2xl border border-emerald-500/30 mb-6 shadow-xl">`;
+            
             html += `<p class="text-emerald-400 mb-6">Click subclades to expand details</p><div class="space-y-4">`;
 
             const data = {
