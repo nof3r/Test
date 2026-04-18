@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HaploHub • DNA Haplogroup Explorer</title>
+    <title>HaploHub • DNA Explorer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -56,7 +56,7 @@
                 UNLOCK YOUR<br>GENETIC STORY
             </h2>
             <p class="text-xl text-gray-300 max-w-md mb-10">
-                Major Y-DNA root haplogroups & subclades • mtDNA lineages • Migration maps
+                Y-DNA & mtDNA lineages • DNA analysis • PCA
             </p>
             <!-- Big Upload button in hero -->
             <button onclick="document.getElementById('dna-upload').click()" 
@@ -206,7 +206,7 @@
         // File upload handler
         document.getElementById('dna-upload').addEventListener('change', function(e) {
             if (e.target.files.length > 0) {
-                alert("DNA file selected: " + e.target.files[0].name + "\n\n(We'll add real processing soon if you want!)");
+                alert("DNA file selected: " + e.target.files[0].name + "\n\n(I'll add real processing soon lol!)");
             }
         });
 
@@ -220,22 +220,22 @@
 
             if (root === "R") {
                 ancestral = "Ancestral Origin: Ancient North Eurasians of Siberia";
-                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Haplogroup_R1_distribution.png/800px-Haplogroup_R1_distribution.png";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/d/db/Haplogroup_R_%28Y-DNA%29.png";
             } else if (root === "E") {
                 ancestral = "Ancestral Origin: Ancestral North Africans & AEA";
-                mapUrl = "https://www.eupedia.com/images/content/Haplogroup_E1b1b.png";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/2/21/Haplogrupo_E_%28ADN-Y%29.png";
             } else if (root === "T") {
                 ancestral = "Ancestral Origin: Levant PPNB";
-                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Haplogroup_T_distribution.png/800px-Haplogroup_T_distribution.png";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/4/45/2026_New_Updated_Map_for_Distribution_of_T-M70.png";
             } else if (root === "J") {
                 ancestral = "Ancestral Origin: Caucasus Hunter-gatherers & Zagros Farmers";
-                mapUrl = "https://www.eupedia.com/images/content/Haplogroup_J.png";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Haplogroup_J_%28Y-DNA%29.PNG";
             } else if (root === "G") {
                 ancestral = "Ancestral Origin: Anatolian Neolithic Farmers";
-                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Haplogroup_G_distribution.png/800px-Haplogroup_G_distribution.png";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/3/33/Haplogrupo_G_%28ADN-Y%29.PNG";
             } else if (root === "H") {
                 ancestral = "Ancestral Origin: Mostly AASI";
-                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Haplogroup_H_distribution.png/800px-Haplogroup_H_distribution.png";
+                mapUrl = "https://upload.wikimedia.org/wikipedia/commons/f/f7/Haplogrupo_H_%28ADN-Y%29.PNG";
             }
 
             let html = `<h2 class="text-4xl font-bold mb-1">${title}</h2>`;
