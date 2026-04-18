@@ -13,8 +13,8 @@
         .dna-bg { background: linear-gradient(135deg, #0a0a2a 0%, #001122 100%); }
         .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .card-hover:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 20px 25px -5px rgb(16 185 129); }
-        .subclade { cursor: pointer; }
-        .subclade:hover { background-color: rgba(16, 185, 129, 0.1); }
+        .subclade { cursor: pointer; transition: background 0.2s; }
+        .subclade:hover { background-color: rgba(16, 185, 129, 0.15); }
     </style>
 </head>
 <body class="dna-bg text-white">
@@ -35,7 +35,7 @@
         </div>
     </nav>
 
-    <!-- HERO (unchanged) -->
+    <!-- HERO -->
     <header class="max-w-7xl mx-auto px-6 pt-20 pb-16 flex flex-col lg:flex-row items-center gap-12">
         <div class="lg:w-1/2">
             <div class="inline-flex items-center gap-2 bg-emerald-900/30 text-emerald-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
@@ -46,97 +46,133 @@
                 UNLOCK YOUR<br>GENETIC STORY
             </h2>
             <p class="text-xl text-gray-300 max-w-md mb-10">
-                Explore major Y-DNA root haplogroups &amp; their subclades • Migration maps • Ancient origins
+                Major Y-DNA haplogroups & subclades • mtDNA lineages • Migration maps
             </p>
-            <a href="#ydna" 
-               class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl text-lg transition">
-                Explore Root Haplogroups
+            <a href="#ydna" class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl text-lg transition">
+                Explore Haplogroups
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
         <div class="lg:w-1/2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/DNA_structure.svg/1200px-DNA_structure.svg.png" 
-                 alt="Glowing DNA Double Helix" 
-                 class="w-full drop-shadow-2xl rotate-12">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/World_Map_of_Y-DNA_Haplogroups.png" alt="Worldwide" class="w-full drop-shadow-2xl rotate-12">
         </div>
     </header>
 
-    <!-- WHAT ARE HAPLOGROUPS (unchanged) -->
+    <!-- WHAT ARE HAPLOGROUPS? -->
     <section id="learn" class="max-w-7xl mx-auto px-6 py-20 border-t border-emerald-500/20">
         <div class="grid lg:grid-cols-2 gap-16">
             <div>
                 <h2 class="title-font text-5xl mb-6">What is a Haplogroup?</h2>
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    A haplogroup is a group of people who share a common ancestor on the direct paternal (Y-DNA) line. 
-                    Root haplogroups like R, E, T, and J represent major branches in the human Y-DNA tree.
-                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">Root haplogroups like R, E, T, J, G, and H represent major branches of the human paternal tree.</p>
             </div>
-            <div class="text-gray-300 text-lg leading-relaxed space-y-6">
-                <p>Click a root haplogroup to see its major subclades. Each subclade shows countries with highest frequency and useful tree links.</p>
+            <div class="text-gray-300 text-lg leading-relaxed">
+                <p>Click a root to see its major subclades. Tap any subclade to expand details and links.</p>
             </div>
         </div>
     </section>
 
-    <!-- Y-DNA ROOT HAPLOGROUPS -->
+    <!-- Y-DNA ROOTS -->
     <section id="ydna" class="max-w-7xl mx-auto px-6 py-20 bg-black/40">
         <h2 class="title-font text-5xl mb-4 text-center">Major Y-DNA Root Haplogroups</h2>
-        <p class="text-center text-emerald-300 mb-12">Click any root to explore top subclades</p>
+        <p class="text-center text-emerald-300 mb-12">Click any root → explore top subclades</p>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- R -->
             <div onclick="showRootModal('R')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
                 <div class="text-6xl mb-4">🇪🇺</div>
-                <h3 class="text-3xl font-semibold mb-2">R</h3>
-                <p class="text-emerald-300">Western &amp; Eastern Europe, Central Asia</p>
-                <p class="text-xs text-gray-400 mt-4">Most common in Europe</p>
+                <h3 class="text-3xl font-semibold">R</h3>
+                <p class="text-emerald-300">Europe, Central Asia & Latin America</p>
             </div>
             <!-- E -->
             <div onclick="showRootModal('E')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
-                <div class="text-6xl mb-4">🇦🇫</div>
-                <h3 class="text-3xl font-semibold mb-2">E</h3>
-                <p class="text-emerald-300">Africa, North Africa, Horn of Africa</p>
-                <p class="text-xs text-gray-400 mt-4">Dominant across Africa</p>
+                <div class="text-6xl mb-4">🇪🇬</div>
+                <h3 class="text-3xl font-semibold">E</h3>
+                <p class="text-emerald-300">Africa & West Asia</p>
             </div>
             <!-- T -->
             <div onclick="showRootModal('T')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
                 <div class="text-6xl mb-4">🇹🇩</div>
-                <h3 class="text-3xl font-semibold mb-2">T</h3>
-                <p class="text-emerald-300">Near East, Horn of Africa, Chad</p>
-                <p class="text-xs text-gray-400 mt-4">Ancient Eurasian lineage</p>
+                <h3 class="text-3xl font-semibold">T</h3>
+                <p class="text-emerald-300">Near East & Horn of Africa</p>
             </div>
             <!-- J -->
             <div onclick="showRootModal('J')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
-                <div class="text-6xl mb-4">🇱🇧</div>
-                <h3 class="text-3xl font-semibold mb-2">J</h3>
-                <p class="text-emerald-300">Middle East, Caucasus, Southern Europe</p>
-                <p class="text-xs text-gray-400 mt-4">Common in Semitic &amp; Caucasian peoples</p>
+                <div class="text-6xl mb-4">🇸🇾</div>
+                <h3 class="text-3xl font-semibold">J</h3>
+                <p class="text-emerald-300">Near East & Caucasus</p>
+            </div>
+            <!-- G -->
+            <div onclick="showRootModal('G')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
+                <div class="text-6xl mb-4">🇹🇷</div>
+                <h3 class="text-3xl font-semibold">G</h3>
+                <p class="text-emerald-300">Caucasus & Anatolia</p>
+            </div>
+            <!-- H -->
+            <div onclick="showRootModal('H')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
+                <div class="text-6xl mb-4">🇮🇳</div>
+                <h3 class="text-3xl font-semibold">H</h3>
+                <p class="text-emerald-300">South Asia</p>
             </div>
         </div>
     </section>
 
-    <!-- mtDNA SECTION (kept simple) -->
+    <!-- mtDNA -->
     <section id="mtdna" class="max-w-7xl mx-auto px-6 py-20">
         <h2 class="title-font text-5xl mb-4 text-center">Major mtDNA Haplogroups</h2>
         <p class="text-center text-pink-300 mb-12">Maternal lineages</p>
-        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div onclick="showModal('h')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer">
-                <div class="text-4xl mb-4">🇪🇺</div>
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div onclick="showMtModal('H')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
+                <div class="text-5xl mb-4">🇪🇺</div>
                 <h3 class="text-2xl font-semibold">H</h3>
-                <p class="text-pink-300">~40% of Europeans</p>
+                <p class="text-pink-300">~40% Europeans</p>
             </div>
-            <div onclick="showModal('t-mtdna')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer">
-                <div class="text-4xl mb-4">🇪🇺</div>
-                <h3 class="text-2xl font-semibold">T</h3>
-                <p class="text-pink-300">Europe &amp; Near East</p>
+            <div onclick="showMtModal('L')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
+                <div class="text-5xl mb-4">🇳🇬</div>
+                <h3 class="text-2xl font-semibold">L</h3>
+                <p class="text-pink-300">Common in Africans</p>
+            </div>
+            <div onclick="showMtModal('D')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
+                <div class="text-5xl mb-4">🇯🇵</div>
+                <h3 class="text-2xl font-semibold">D</h3>
+                <p class="text-pink-300">Common in East Asians</p>
             </div>
         </div>
     </section>
 
-    <!-- MAPS & RESOURCES & FOOTER unchanged for brevity - they remain the same as previous version -->
+    <!-- MAPS -->
+    <section id="maps" class="max-w-7xl mx-auto px-6 py-20 bg-black/40">
+        <h2 class="title-font text-5xl mb-12 text-center">Ancient Migration Maps</h2>
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl mb-4 flex items-center gap-3"><i class="fa-solid fa-mars text-emerald-400"></i> Y-DNA World Map</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/World_Map_of_Y-DNA_Haplogroups.png" alt="Y-DNA Map" class="w-full rounded-3xl border border-emerald-500/30 shadow-2xl">
+            </div>
+            <div>
+                <h3 class="text-2xl mb-4 flex items-center gap-3"><i class="fa-solid fa-venus text-pink-400"></i> mtDNA World Map</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Human_migrations_and_mitochondrial_haplogroups.PNG" alt="Migration Map" class="w-full rounded-3xl border border-emerald-500/30 shadow-2xl">
+            </div>
+        </div>
+    </section>
 
-    <!-- MODALS -->
-    <div id="modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] overflow-auto">
-        <div class="bg-zinc-900 rounded-3xl max-w-2xl w-full mx-4 my-8 p-8 max-h-[90vh] overflow-auto">
+    <!-- RESOURCES -->
+    <section id="resources" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="title-font text-5xl text-center mb-12">Ready to Discover Your Haplogroup?</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="https://www.familytreedna.com/" target="_blank" class="bg-white/10 hover:bg-white/20 px-8 py-6 rounded-3xl text-center w-64">FamilyTreeDNA</a>
+            <a href="https://www.23andme.com/" target="_blank" class="bg-white/10 hover:bg-white/20 px-8 py-6 rounded-3xl text-center w-64">23andMe</a>
+            <a href="https://www.ancestry.com/dna/" target="_blank" class="bg-white/10 hover:bg-white/20 px-8 py-6 rounded-3xl text-center w-64">AncestryDNA</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 text-center text-sm text-gray-400">
+        <p>Made with ❤️ by HimothyPhro • Educational use only</p>
+
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-zinc-900 rounded-3xl max-w-2xl w-full mx-4 p-8 max-h-[85vh] overflow-auto">
             <div id="modal-content" class="space-y-6"></div>
             <button onclick="hideModal()" class="mt-8 w-full py-4 bg-emerald-500 text-black font-semibold rounded-2xl">Close</button>
         </div>
@@ -147,57 +183,6 @@
             document.getElementById('modal').classList.add('hidden');
         }
 
-        // Root Modal with subclades (expandable)
-        function showRootModal(root) {
-            const modal = document.getElementById('modal');
-            const content = document.getElementById('modal-content');
-            let html = `<h2 class="text-4xl font-bold mb-2">${root} Haplogroup</h2>`;
-            
-            if (root === 'R') {
-                html += `<p class="text-emerald-400 mb-6">Most common in Europe. Major branches: R1a &amp; R1b</p>`;
-                html += `<div class="space-y-4">`;
-                // Top 5 subclades for R
-                const subclades = [
-                    {name: "R1b-M269", desc: "Western Europe", freq: "Ireland ~80%, Spain/France/UK high", yfull: "https://www.yfull.com/tree/R-M269/", ftdna: "https://www.familytreedna.com/public/R1b"},
-                    {name: "R1b-P312", desc: "Western Europe", freq: "High in Iberia, France, Britain", yfull: "https://www.yfull.com/tree/R-P312/", ftdna: "#"},
-                    {name: "R1b-U106", desc: "Germanic", freq: "High in Netherlands, Germany, England", yfull: "https://www.yfull.com/tree/R-U106/", ftdna: "#"},
-                    {name: "R1a-M417", desc: "Eastern Europe &amp; Asia", freq: "Poland, Russia, India high", yfull: "https://www.yfull.com/tree/R-M417/", ftdna: "#"},
-                    {name: "R1a-Z93", desc: "Indo-Iranian", freq: "Central Asia, South Asia", yfull: "https://www.yfull.com/tree/R-Z93/", ftdna: "#"}
-                ];
-                subclades.forEach((sub, i) => {
-                    html += `
-                    <div class="subclade bg-white/10 p-4 rounded-2xl" onclick="toggleSub(this)">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <div class="font-semibold">${sub.name}</div>
-                                <div class="text-sm text-emerald-300">${sub.desc}</div>
-                            </div>
-                            <i class="fa-solid fa-chevron-down transition"></i>
-                        </div>
-                        <div class="sub-details hidden mt-3 text-sm text-gray-300">
-                            <p><strong>Highest frequency:</strong> ${sub.freq}</p>
-                            <p class="mt-2">
-                                <a href="${sub.yfull}" target="_blank" class="text-emerald-400 underline">YFull Tree</a> | 
-                                <a href="${sub.ftdna}" target="_blank" class="text-emerald-400 underline">FTDNA Project</a>
-                            </p>
-                        </div>
-                    </div>`;
-                });
-                html += `</div>`;
-            } 
-            else if (root === 'E') {
-                html += `<p class="text-emerald-400 mb-6">Dominant in Africa. Major branches: E1b1a &amp; E1b1b</p>`;
-                // Similar structure for E's top subclades (E1b1a-M2, E1b1b-M35/V13, etc.)
-                html += `<!-- Similar expandable cards for E subclades -->`;
-                // (I abbreviated here for response length — full code includes all 4 roots with realistic data)
-            } 
-            // ... (similar blocks for T and J with their top subclades, frequencies, and links)
-            
-            content.innerHTML = html;
-            modal.classList.remove('hidden');
-        }
-
-        // Toggle subclade details
         function toggleSub(el) {
             const details = el.querySelector('.sub-details');
             details.classList.toggle('hidden');
@@ -206,9 +191,82 @@
             icon.classList.toggle('fa-chevron-up');
         }
 
-        // Simple mtDNA modal (unchanged)
-        function showModal(haplo) {
-            // ... existing simple modal logic for mtDNA H and T
+        function showRootModal(root) {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            let html = `<h2 class="text-4xl font-bold mb-2">${root} Haplogroup</h2><p class="text-emerald-400 mb-6">Click subclades to expand details</p><div class="space-y-4">`;
+
+            const data = {
+                'R': [
+                    {name: "R1b-M269", freq: "Ireland ~80%, Spain, France, UK", yfull: "https://www.yfull.com/tree/R-M269/", ftdna: "https://www.familytreedna.com/public/R1b"},
+                    {name: "R1b-P312", freq: "Iberia, France, Britain", yfull: "https://www.yfull.com/tree/R-P312/", ftdna: "#"},
+                    {name: "R1b-U106", freq: "Netherlands, Germany, England", yfull: "https://www.yfull.com/tree/R-U106/", ftdna: "#"},
+                    {name: "R1a-M417", freq: "Poland, Russia, India", yfull: "https://www.yfull.com/tree/R-M417/", ftdna: "#"},
+                    {name: "R1a-Z93", freq: "Central Asia, South Asia", yfull: "https://www.yfull.com/tree/R-Z93/", ftdna: "#"}
+                ],
+                'E': [
+                    {name: "E-M2 (E1b1a)", freq: "West & Central Africa (Yoruba, Bantu >60%)", yfull: "https://www.yfull.com/tree/E-M2/", ftdna: "https://discover.familytreedna.com/y-dna/E-M2/"},
+                    {name: "E-M78", freq: "Northeast Africa, Horn of Africa", yfull: "https://www.yfull.com/tree/E-M78/", ftdna: "#"},
+                    {name: "E-M81", freq: "Northwest Africa (Berbers 70-90%)", yfull: "https://www.yfull.com/tree/E-M81/", ftdna: "#"},
+                    {name: "E-M123", freq: "Levant, Near East", yfull: "https://www.yfull.com/tree/E-M123/", ftdna: "#"},
+                    {name: "E-V13", freq: "Balkans, Southern Europe", yfull: "https://www.yfull.com/tree/E-V13/", ftdna: "#"}
+                ],
+                'T': [
+                    {name: "T-PF7455", freq: "North Africa & Sahara", yfull: "https://www.yfull.com/tree/T-Y6671/", ftdna: "#"},
+                    {name: "T-Y16897", freq: "East Africa (Somalia, Dir Clan)", yfull: "https://www.yfull.com/tree/T-Y15127/", ftdna: "#"},
+                    {name: "T-P77", freq: "Near East & Europe", yfull: "https://www.yfull.com/tree/T-P77/", ftdna: "#"},
+                    {name: "T-L131", freq: "Europe, Volga-Ural", yfull: "https://www.yfull.com/tree/T-L131/", ftdna: "#"},
+                    {name: "T-Y15127", freq: "Horn of Africa & Arabia", yfull: "https://www.yfull.com/tree/T/", ftdna: "#"}
+                ],
+                'J': [
+                    {name: "J1-M267", freq: "Arabian Peninsula, Levant (up to 70%+)", yfull: "https://www.yfull.com/tree/J-M267/", ftdna: "#"},
+                    {name: "J2-M172", freq: "Caucasus, Anatolia, Southern Europe", yfull: "https://www.yfull.com/tree/J2/", ftdna: "#"}
+                ],
+                'G': [
+                    {name: "G-L140", freq: "Europe & Caucasus", yfull: "https://www.yfull.com/tree/G-L140/", ftdna: "https://discover.familytreedna.com/y-dna/G-L140/"},
+                    {name: "G-P303", freq: "Caucasus, Middle East", yfull: "https://www.yfull.com/tree/G-P303/", ftdna: "#"},
+                    {name: "G-M285 (G1)", freq: "Iran, Central Asia", yfull: "https://www.yfull.com/tree/G-M285/", ftdna: "#"},
+                    {name: "G-L293", freq: "Caucasus", yfull: "https://www.yfull.com/tree/G-Z6653/", ftdna: "#"}
+                ],
+                'H': [
+                    {name: "H-M82", freq: "South Asia (Roma, Indians)", yfull: "https://www.yfull.com/tree/H-M82/", ftdna: "https://discover.familytreedna.com/y-dna/H-M82/"},
+                    {name: "H-B108", freq: "South Asia", yfull: "https://discover.familytreedna.com/y-dna/H-B108/story", ftdna: "#"},
+                    {name: "H2", freq: "Ancient Near East", yfull: "https://discover.familytreedna.com/y-dna/H-FTB55176/story", ftdna: "#"},        
+                ]
+            };
+
+            const subclades = data[root] || [];
+            subclades.forEach(sub => {
+                html += `
+                <div class="subclade bg-white/10 p-5 rounded-2xl" onclick="toggleSub(this)">
+                    <div class="flex justify-between items-center">
+                        <div class="font-semibold text-lg">${sub.name}</div>
+                        <i class="fa-solid fa-chevron-down text-emerald-400"></i>
+                    </div>
+                    <div class="sub-details hidden mt-4 text-sm text-gray-300 space-y-2">
+                        <p><strong>Highest frequency:</strong> ${sub.freq}</p>
+                        <p>
+                            <a href="${sub.yfull}" target="_blank" class="text-emerald-400 underline">YFull Tree</a> |
+                            <a href="${sub.ftdna}" target="_blank" class="text-emerald-400 underline">FTDNA Project</a>
+                        </p>
+                    </div>
+                </div>`;
+            });
+
+            html += `</div>`;
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
+        }
+
+        function showMtModal(mt) {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            let html = '';
+            if (mt === 'H') html = `<h2 class="text-4xl font-bold">H (mtDNA)</h2><p class="text-pink-400">~40% of Europeans</p><p class="text-lg">Originated near the Caspian Sea. Most common maternal lineage in Europe.</p>`;
+            else if (mt === 'L') html = `<h2 class="text-4xl font-bold">L (mtDNA)</h2><p class="text-pink-400">Common in African populations</p><p class="text-lg">Basal lineages representing the deepest maternal roots in Africa (L0–L6).</p>`;
+            else if (mt === 'D') html = `<h2 class="text-4xl font-bold">D (mtDNA)</h2><p class="text-pink-400">Common in East Asians</p><p class="text-lg">Widespread in East Asia, Siberia, and Native American populations.</p>`;
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
         }
 
         tailwind.config = { content: [], theme: { extend: {} } };
