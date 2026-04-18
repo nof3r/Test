@@ -16,7 +16,14 @@
         .subclade { cursor: pointer; transition: background 0.2s; }
         .subclade:hover { background-color: rgba(16, 185, 129, 0.15); }
         .ancestral { color: #a5b4fc; font-style: italic; }
-        .upload-btn { background-color: #60a5fa; color: #0f172a; font-weight: 600; padding: 1.25rem 2.5rem; font-size: 1.25rem; }
+        .upload-btn { 
+            background-color: #60a5fa; 
+            color: #0f172a; 
+            font-weight: 600; 
+            padding: 1.25rem 3rem; 
+            font-size: 1.35rem; 
+            border-radius: 9999px;
+        }
         .upload-btn:hover { background-color: #3b82f6; }
     </style>
 </head>
@@ -49,8 +56,15 @@
                 UNLOCK YOUR<br>GENETIC STORY
             </h2>
             <p class="text-xl text-gray-300 max-w-md mb-10">
-                Major Y-DNA root haplogroups & subclades • mtDNA lineages • Migration maps
+                Y-DNA & mtDNA haplogroups & subclades • Autosomal Analysis • Migration maps • PCA plot
             </p>
+            <!-- Big Upload button in hero section -->
+            <button onclick="document.getElementById('dna-upload').click()" 
+                    class="upload-btn flex items-center gap-3 shadow-xl">
+                <i class="fa-solid fa-upload"></i>
+                Upload your DNA file here
+            </button>
+            <input type="file" id="dna-upload" class="hidden" accept=".txt,.csv,.zip,.gz,.vcf">
         </div>
         <div class="lg:w-1/2">
             <img src="https://www.worldhistory.org/uploads/images/6605.png?v=1773847208-1747128928" alt="Glowing DNA" class="w-full drop-shadow-2xl">
@@ -66,13 +80,12 @@
             </div>
             <div class="text-gray-300 text-lg leading-relaxed">
                 <p>Click a root to see its major subclades. Tap any subclade to expand details and links.</p>
-                <!-- Big light blue Upload button -->
-                <button onclick="document.getElementById('dna-upload').click()" 
-                        class="upload-btn mt-8 flex items-center gap-3 rounded-2xl shadow-lg">
-                    <i class="fa-solid fa-upload"></i>
-                    Upload your DNA file here
-                </button>
-                <input type="file" id="dna-upload" class="hidden" accept=".txt,.csv,.zip,.gz,.vcf">
+                <!-- Explore Root Haplogroups button placed here -->
+                <a href="#ydna" 
+                   class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl text-lg mt-8 transition">
+                    Explore Root Haplogroups
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -203,7 +216,7 @@
             
             let title = root + " Haplogroup";
             let ancestral = "";
-            let mapUrl = "https://upload.wikimedia.org/wikipedia/commons/c/ca/World_Map_of_Y-DNA_Haplogroups.png"; // placeholder - can be made specific later
+            let mapUrl = "https://upload.wikimedia.org/wikipedia/commons/c/ca/World_Map_of_Y-DNA_Haplogroups.png";
 
             if (root === "R") ancestral = "Ancestral Origin: Ancient North Eurasians of Siberia";
             else if (root === "E") ancestral = "Ancestral Origin: Ancestral North Africans & AEA";
@@ -214,10 +227,7 @@
 
             let html = `<h2 class="text-4xl font-bold mb-1">${title}</h2>`;
             html += `<p class="ancestral text-lg mb-4">${ancestral}</p>`;
-            
-            // Map after ancestral origin
             html += `<img src="${mapUrl}" alt="${root} Migration Map" class="w-full rounded-2xl border border-emerald-500/30 mb-6 shadow-xl">`;
-            
             html += `<p class="text-emerald-400 mb-6">Click subclades to expand details</p><div class="space-y-4">`;
 
             const data = {
