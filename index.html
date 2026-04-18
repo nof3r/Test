@@ -15,7 +15,9 @@
         .card-hover:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 20px 25px -5px rgb(16 185 129); }
         .subclade { cursor: pointer; transition: background 0.2s; }
         .subclade:hover { background-color: rgba(16, 185, 129, 0.15); }
-        .ancestral { color: #a5b4fc; font-style: italic; } /* Soft purple/teal for ancestral origins */
+        .ancestral { color: #a5b4fc; font-style: italic; }
+        .upload-btn { background-color: #60a5fa; color: #0f172a; font-weight: 600; padding: 1.25rem 2.5rem; font-size: 1.25rem; }
+        .upload-btn:hover { background-color: #3b82f6; }
     </style>
 </head>
 <body class="dna-bg text-white">
@@ -49,10 +51,6 @@
             <p class="text-xl text-gray-300 max-w-md mb-10">
                 Major Y-DNA root haplogroups & subclades • mtDNA lineages • Migration maps
             </p>
-            <a href="#ydna" class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl text-lg transition">
-                Explore Root Haplogroups
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
         </div>
         <div class="lg:w-1/2">
             <img src="https://www.worldhistory.org/uploads/images/6605.png?v=1773847208-1747128928" alt="Glowing DNA" class="w-full drop-shadow-2xl">
@@ -68,6 +66,13 @@
             </div>
             <div class="text-gray-300 text-lg leading-relaxed">
                 <p>Click a root to see its major subclades. Tap any subclade to expand details and links.</p>
+                <!-- Big light blue Upload button -->
+                <button onclick="document.getElementById('dna-upload').click()" 
+                        class="upload-btn mt-8 flex items-center gap-3 rounded-2xl shadow-lg">
+                    <i class="fa-solid fa-upload"></i>
+                    Upload your DNA file here
+                </button>
+                <input type="file" id="dna-upload" class="hidden" accept=".txt,.csv,.zip,.gz,.vcf">
             </div>
         </div>
     </section>
@@ -144,7 +149,7 @@
             </div>
             <div>
                 <h3 class="text-2xl mb-4 flex items-center gap-3"><i class="fa-solid fa-venus text-pink-400"></i> mtDNA World Map</h3>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Human_migrations_and_mitochondrial_haplogroups.PNG" alt="mtDNA World Map" class="w-full rounded-3xl border border-emerald-500/30 shadow-2xl">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Human_migrations_and_mitochondrial_haplogroups.PNG" alt="mtDNA Map" class="w-full rounded-3xl border border-emerald-500/30 shadow-2xl">
             </div>
         </div>
     </section>
@@ -162,7 +167,6 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 text-center text-sm text-gray-400">
         <p>Made with ❤️ by HimothyPhro 🧬 • Educational use only</p>
-        <p class="mt-4"></p>
     </footer>
 
     <!-- MODAL -->
@@ -186,13 +190,21 @@
             icon.classList.toggle('fa-chevron-up');
         }
 
+        // File upload handler
+        document.getElementById('dna-upload').addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                alert("DNA file selected: " + e.target.files[0].name + "\n\n(We'll add real processing soon if you want!)");
+            }
+        });
+
         function showRootModal(root) {
             const modal = document.getElementById('modal');
             const content = document.getElementById('modal-content');
             
             let title = root + " Haplogroup";
             let ancestral = "";
-            
+            let mapUrl = "https://upload.wikimedia.org/wikipedia/commons/c/ca/World_Map_of_Y-DNA_Haplogroups.png"; // placeholder - can be made specific later
+
             if (root === "R") ancestral = "Ancestral Origin: Ancient North Eurasians of Siberia";
             else if (root === "E") ancestral = "Ancestral Origin: Ancestral North Africans & AEA";
             else if (root === "T") ancestral = "Ancestral Origin: Levant PPNB";
@@ -201,7 +213,11 @@
             else if (root === "H") ancestral = "Ancestral Origin: Mostly AASI";
 
             let html = `<h2 class="text-4xl font-bold mb-1">${title}</h2>`;
-            html += `<p class="ancestral text-lg mb-6">${ancestral}</p>`;
+            html += `<p class="ancestral text-lg mb-4">${ancestral}</p>`;
+            
+            // Map after ancestral origin
+            html += `<img src="${mapUrl}" alt="${root} Migration Map" class="w-full rounded-2xl border border-emerald-500/30 mb-6 shadow-xl">`;
+            
             html += `<p class="text-emerald-400 mb-6">Click subclades to expand details</p><div class="space-y-4">`;
 
             const data = {
