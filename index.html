@@ -99,7 +99,7 @@
             <div onclick="showRootModal('R')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
                 <div class="text-6xl mb-4">🇪🇺</div>
                 <h3 class="text-3xl font-semibold">R</h3>
-                <p class="text-emerald-300">Europe & Central Asia</p>
+                <p class="text-emerald-300">Europe, Central Asia & Latin America</p>
             </div>
             <div onclick="showRootModal('E')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
                 <div class="text-6xl mb-4">🇪🇬</div>
@@ -109,10 +109,10 @@
             <div onclick="showRootModal('T')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
                 <div class="text-6xl mb-4">🇹🇩</div>
                 <h3 class="text-3xl font-semibold">T</h3>
-                <p class="text-emerald-300">Near East & Horn of Africa</p>
+                <p class="text-emerald-300">Near East & East Africa</p>
             </div>
             <div onclick="showRootModal('J')" class="card-hover bg-white/5 p-6 rounded-3xl cursor-pointer text-center">
-                <div class="text-6xl mb-4">🇱🇧</div>
+                <div class="text-6xl mb-4">🇸🇾</div>
                 <h3 class="text-3xl font-semibold">J</h3>
                 <p class="text-emerald-300">Near East & Caucasus</p>
             </div>
@@ -248,7 +248,7 @@
 
             const data = {
                 'R': [
-                    {name: "R1b-M269", freq: "Ireland ~80%, Spain, France, UK", yfull: "https://www.yfull.com/tree/R-M269/", ftdna: "https://www.familytreedna.com/public/R1b"},
+                    {name: "R1b-M269", freq: "Ireland ~80%, Spain, France, UK, Latin America", yfull: "https://www.yfull.com/tree/R-M269/", ftdna: "https://www.familytreedna.com/public/R1b"},
                     {name: "R1b-P312", freq: "Iberia, France, Britain", yfull: "https://www.yfull.com/tree/R-P312/", ftdna: "#"},
                     {name: "R1b-U106", freq: "Netherlands, Germany, England", yfull: "https://www.yfull.com/tree/R-U106/", ftdna: "#"},
                     {name: "R1a-M417", freq: "Poland, Russia, India", yfull: "https://www.yfull.com/tree/R-M417/", ftdna: "#"},
@@ -256,14 +256,14 @@
                 ],
                 'E': [
                     {name: "E-M2 (E1b1a)", freq: "West & Central Africa (Yoruba, Bantu >60%)", yfull: "https://www.yfull.com/tree/E-M2/", ftdna: "https://discover.familytreedna.com/y-dna/E-M2/"},
-                    {name: "E-M78", freq: "North Africa, Horn of Africa, Balkans", yfull: "https://www.yfull.com/tree/E-M78/", ftdna: "#"},
+                    {name: "E-M78", freq: "Northeast Africa (Egyptians, Cushites)", yfull: "https://www.yfull.com/tree/E-M78/", ftdna: "#"},
                     {name: "E-M81", freq: "Northwest Africa (Berbers 70-90%)", yfull: "https://www.yfull.com/tree/E-M81/", ftdna: "https://discover.familytreedna.com/y-dna/E-M81/story"},
                     {name: "E-M123", freq: "Levantines, Arabs", yfull: "https://www.yfull.com/tree/E-M123/", ftdna: "https://discover.familytreedna.com/y-dna/E-M123/story"},
                     {name: "E-V13", freq: "Balkans, Southern Europe", yfull: "https://www.yfull.com/tree/E-V13/", ftdna: "https://discover.familytreedna.com/y-dna/E-V13/story"}
                 ],
                 'T': [
-                    {name: "T-PF7455", freq: "North Africa, Saharans", yfull: "https://www.yfull.com/tree/T-Y6671/", ftdna: "https://discover.familytreedna.com/y-dna/T-PF7455/story"},
-                    {name: "T-Y16897", freq: "East Africa (Somalia, Dir clan)", yfull: "https://www.yfull.com/tree/T-Y16897/", ftdna: "https://discover.familytreedna.com/y-dna/T-Y16897/story"},
+                    {name: "T-PF7455", freq: "North Africa, Sahara (44% in Daza of Chad)", yfull: "https://www.yfull.com/tree/T-Y6671/", ftdna: "https://discover.familytreedna.com/y-dna/T-PF7455/story"},
+                    {name: "T-Y16897", freq: "East Africa (Somalia, 90% in Dir clan)", yfull: "https://www.yfull.com/tree/T-Y16897/", ftdna: "https://discover.familytreedna.com/y-dna/T-Y16897/story"},
                     {name: "T-Z709", freq: "Near East & South Europe", yfull: "https://www.yfull.com/tree/T-Z709/", ftdna: "https://discover.familytreedna.com/y-dna/T-Z709/story"},
                     {name: "T-L131", freq: "Europe, Volga-Ural", yfull: "https://www.yfull.com/tree/T-L131/", ftdna: "https://discover.familytreedna.com/y-dna/T-L131/story"},
                     {name: "T-Y15127", freq: "Horn of Africa & Mediterranean", yfull: "https://www.yfull.com/tree/T-Y15127/", ftdna: "https://discover.familytreedna.com/y-dna/T-Y15127/story"}
@@ -282,7 +282,7 @@
                     {name: "H-M82", freq: "South Asia (Roma, Indians)", yfull: "https://www.yfull.com/tree/H-M82/", ftdna: "https://discover.familytreedna.com/y-dna/H-M82/"},
                     {name: "H-B108", freq: "South Asia", yfull: "https://discover.familytreedna.com/y-dna/H-B108/story", ftdna: "#"},
                     {name: "H2", freq: "Europe & Near East", yfull: "https://discover.familytreedna.com/y-dna/H-FTB55176/story", ftdna: "#"},
-                    {name: "H3", freq: "South Asia", yfull: "https://www.yfull.com/tree/H/", ftdna: "#"}
+                    {name: "H3", freq: "Sri Lanka", yfull: "https://www.yfull.com/tree/H/", ftdna: "#"}
                 ]
             };
 
