@@ -16,8 +16,16 @@
         .subclade { cursor: pointer; transition: background 0.2s; }
         .subclade:hover { background-color: rgba(16, 185, 129, 0.15); }
         .ancestral { color: #a5b4fc; font-style: italic; }
-        .price-card { transition: all 0.3s; }
-        .price-card:hover { transform: translateY(-8px); }
+        .upload-btn { 
+            background-color: #60a5fa; 
+            color: #0f172a; 
+            font-weight: 600; 
+            padding: 1.25rem 3rem; 
+            font-size: 1.35rem; 
+            border-radius: 9999px;
+        }
+        .upload-btn:hover { background-color: #3b82f6; }
+        .gold-feature { color: #fcd34d; text-shadow: 0 0 12px #fcd34d; }
     </style>
 </head>
 <body class="dna-bg text-white">
@@ -72,7 +80,7 @@
         </div>
     </section>
 
-    <!-- Y-DNA ROOTS (unchanged from your file) -->
+    <!-- Y-DNA ROOTS (kept exactly as your last version) -->
     <section id="ydna" class="max-w-7xl mx-auto px-6 py-20 bg-black/40">
         <h2 class="title-font text-5xl mb-4 text-center">Major Y-DNA Haplogroups</h2>
         <p class="text-center text-emerald-300 mb-12">Click any root → explore top subclades</p>
@@ -111,7 +119,7 @@
         </div>
     </section>
 
-    <!-- mtDNA (unchanged) -->
+    <!-- mtDNA (kept as your last version) -->
     <section id="mtdna" class="max-w-7xl mx-auto px-6 py-20">
         <h2 class="title-font text-5xl mb-4 text-center">Major mtDNA Haplogroups</h2>
         <p class="text-center text-pink-300 mb-12">Maternal lineages</p>
@@ -135,151 +143,152 @@
     </section>
 
     <!-- PRICING SECTION -->
-    <section id="pricing" class="max-w-7xl mx-auto px-6 py-20">
+    <section id="pricing" class="max-w-7xl mx-auto px-6 py-20 bg-black/40">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-semibold text-emerald-300">Discover Your Origins</h2>
         </div>
         
         <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <!-- Basic Plan -->
+            <!-- Basic $24.99 -->
             <div class="price-card bg-white/5 border border-white/10 rounded-3xl p-8">
                 <div class="text-center">
-                    <div class="text-5xl font-bold text-white">$24.99</div>
-                    <p class="text-emerald-400 mt-2">Basic Analysis</p>
+                    <div class="text-5xl font-bold">$24.99</div>
+                    <p class="text-emerald-400 mt-1">Basic Analysis</p>
                 </div>
                 <ul class="mt-10 space-y-4 text-gray-300">
-                    <li class="flex items-center gap-3">• Haplogroup</li>
-                    <li class="flex items-center gap-3">• Neolithic DNA</li>
-                    <li class="flex items-center gap-3">• Bronze Age</li>
-                    <li class="flex items-center gap-3">• Modern</li>
-                    <li class="flex items-center gap-3">• Closest Populations</li>
-                    <li class="flex items-center gap-3">• PCA</li>
-                    <li class="flex items-center gap-3 text-red-400 line-through">❌ Facial Analysis</li>
-                    <li class="flex items-center gap-3 text-red-400 line-through">❌ Neandertal-Denisovan %</li>
-                    <li class="flex items-center gap-3 text-red-400 line-through">❌ Heatmap</li>
+                    <li>• Haplogroup</li>
+                    <li>• Neolithic DNA</li>
+                    <li>• Bronze Age</li>
+                    <li>• Modern</li>
+                    <li>• Closest Populations</li>
+                    <li>• PCA</li>
                 </ul>
-                <button onclick="showExampleModal(1)" 
-                        class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-2xl">
+                <button onclick="showExampleModal(1)" class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-2xl">
                     See Example
                 </button>
             </div>
 
-            <!-- Premium Plan -->
-            <div class="price-card bg-white/5 border border-emerald-400/50 rounded-3xl p-8 relative">
-                <div class="absolute -top-4 right-8 bg-emerald-400 text-black text-xs font-bold px-4 py-1 rounded-full">Most Popular</div>
+            <!-- Premium $38.99 -->
+            <div class="price-card bg-white/5 border border-emerald-400/50 rounded-3xl p-8 relative overflow-hidden">
+                <div class="absolute -top-4 right-8 bg-amber-400 text-black text-xs font-bold px-5 py-1 rounded-full">Most Popular</div>
                 <div class="text-center">
-                    <div class="text-5xl font-bold text-white">$38.99</div>
-                    <p class="text-emerald-400 mt-2">Full Analysis</p>
+                    <div class="text-5xl font-bold">$38.99</div>
+                    <p class="text-emerald-400 mt-1">Full Analysis</p>
                 </div>
                 <ul class="mt-10 space-y-4 text-gray-300">
-                    <li class="flex items-center gap-3">• Haplogroup</li>
-                    <li class="flex items-center gap-3">• Neolithic DNA</li>
-                    <li class="flex items-center gap-3">• Bronze Age</li>
-                    <li class="flex items-center gap-3">• Modern</li>
-                    <li class="flex items-center gap-3">• Closest Populations</li>
-                    <li class="flex items-center gap-3">• PCA</li>
-                    <li class="flex items-center gap-3">• Facial Analysis</li>
-                    <li class="flex items-center gap-3">• Neandertal-Denisovan %</li>
-                    <li class="flex items-center gap-3">• Heatmap</li>
+                    <li>• Haplogroup</li>
+                    <li>• Neolithic DNA</li>
+                    <li>• Bronze Age</li>
+                    <li>• Modern</li>
+                    <li>• Closest Populations</li>
+                    <li>• PCA</li>
+                    <li class="gold-feature">• Facial Analysis</li>
+                    <li class="gold-feature">• Neandertal-Denisovan %</li>
+                    <li class="gold-feature">• Heatmap</li>
                 </ul>
-                <button onclick="showExampleModal(2)" 
-                        class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-2xl">
+                <button onclick="showExampleModal(2)" class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-2xl">
                     See Example
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- EXAMPLE MODAL -->
-    <div id="example-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[200]">
-        <div class="bg-zinc-900 rounded-3xl max-w-4xl w-full mx-4 p-8 max-h-[90vh] overflow-auto">
-            <div id="example-content" class="space-y-8"></div>
-            <button onclick="hideExampleModal()" 
-                    class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-5 rounded-2xl text-xl">
-                Continue & Pay
-            </button>
+    <!-- EXAMPLE MODAL (2/3 layout with clickable left panel) -->
+    <div id="example-modal" class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-[200]">
+        <div class="bg-zinc-900 rounded-3xl w-full max-w-6xl mx-4 max-h-[90vh] overflow-hidden flex flex-col">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center">
+                <h3 id="example-title" class="text-3xl font-bold">Premium Report Example</h3>
+                <button onclick="hideExampleModal()" class="text-gray-400 hover:text-white">✕</button>
+            </div>
+            
+            <div class="flex flex-1 overflow-hidden">
+                <!-- Left 1/3: Clickable features -->
+                <div class="w-1/3 border-r border-white/10 p-6 overflow-auto bg-black/30">
+                    <div onclick="switchFeature(1)" class="feature-btn p-4 rounded-2xl cursor-pointer hover:bg-white/10 mb-2">Haplogroup</div>
+                    <div onclick="switchFeature(2)" class="feature-btn p-4 rounded-2xl cursor-pointer hover:bg-white/10 mb-2">PCA Plot</div>
+                    <div onclick="switchFeature(3)" class="feature-btn p-4 rounded-2xl cursor-pointer hover:bg-white/10 mb-2">Neolithic DNA</div>
+                    <div onclick="switchFeature(4)" class="feature-btn p-4 rounded-2xl cursor-pointer hover:bg-white/10 mb-2">Bronze Age</div>
+                    <div onclick="switchFeature(5)" class="feature-btn p-4 rounded-2xl cursor-pointer hover:bg-white/10 mb-2">Modern Ancestry</div>
+                    <div onclick="switchFeature(6)" class="feature-btn p-4 rounded-2xl cursor-pointer hover:bg-white/10 mb-2">Closest Populations</div>
+                    <div onclick="switchFeature(7)" class="feature-btn gold-feature p-4 rounded-2xl cursor-pointer hover:bg-white/10">Facial Analysis</div>
+                    <div onclick="switchFeature(8)" class="feature-btn gold-feature p-4 rounded-2xl cursor-pointer hover:bg-white/10">Neandertal-Denisovan %</div>
+                    <div onclick="switchFeature(9)" class="feature-btn gold-feature p-4 rounded-2xl cursor-pointer hover:bg-white/10">Heatmap</div>
+                </div>
+                
+                <!-- Right 2/3: Dynamic content -->
+                <div id="example-display" class="w-2/3 p-8 overflow-auto">
+                    <!-- Content changes based on clicked feature -->
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- PAYMENT MODAL -->
-    <div id="payment-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[300]">
+    <div id="payment-modal" class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-[300]">
         <div class="bg-zinc-900 rounded-3xl max-w-md w-full mx-4 p-10">
             <h3 class="text-3xl font-bold mb-8 text-center">Complete Your Purchase</h3>
             <input type="email" id="user-email" placeholder="Your email address" 
-                   class="w-full bg-black/50 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400 mb-6">
+                   class="w-full bg-black/50 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder-gray-400 mb-6">
             <a href="https://www.paypal.com" target="_blank" 
                class="block w-full bg-[#0070BA] hover:bg-[#003087] text-white font-semibold py-5 rounded-2xl text-center text-xl">
                 Pay with PayPal
             </a>
-            <p class="text-center text-sm text-gray-400 mt-6">or email us your results after payment</p>
             <button onclick="hidePaymentModal()" class="mt-8 w-full text-gray-400">Cancel</button>
         </div>
     </div>
 
-    <!-- Existing MAPS, RESOURCES, FOOTER, and Y-DNA modal script remain the same as your last file -->
+    <!-- MAPS, RESOURCES, FOOTER (kept exactly as your last version) -->
+    <!-- ... paste the rest of your sections from the file you sent if needed, but for brevity they are unchanged -->
 
     <script>
-        // Your existing hideModal, toggleSub, showRootModal, showMtModal functions go here (unchanged from your file)
-        // ... (paste your full script from the previous version here)
+        // Existing functions (hideModal, toggleSub, showRootModal, showMtModal) from your file go here
+        // ... (keep all your Y-DNA and mtDNA modal code exactly as is)
+
+        let currentPlan = 1;
 
         function showExampleModal(plan) {
-            const modal = document.getElementById('example-modal');
-            const content = document.getElementById('example-content');
-            let html = '';
-            
-            if (plan === 1) {
-                html = `
-                    <h2 class="text-4xl font-bold text-center">Basic Report Example</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-2xl mb-4">Haplogroup: R1b-M269</h3>
-                            <img src="https://via.placeholder.com/600x300/1f2937/60a5fa?text=Haplogroup+Map" class="rounded-2xl">
-                        </div>
-                        <div>
-                            <h3 class="text-2xl mb-4">PCA Plot</h3>
-                            <img src="https://via.placeholder.com/600x300/1f2937/60a5fa?text=PCA+Plot" class="rounded-2xl">
-                        </div>
-                    </div>
-                    <p class="text-center text-emerald-300 mt-8">Neolithic • Bronze Age • Modern Ancestry Breakdown</p>
-                `;
-            } else {
-                html = `
-                    <h2 class="text-4xl font-bold text-center">Premium Report Example</h2>
-                    <div class="space-y-10">
-                        <div>
-                            <h3 class="text-2xl mb-4">Facial Analysis</h3>
-                            <img src="https://via.placeholder.com/600x400/1f2937/60a5fa?text=Facial+Analysis+Example" class="rounded-2xl mx-auto">
-                        </div>
-                        <div class="grid grid-cols-2 gap-6">
-                            <div>
-                                <h3 class="text-xl mb-3">Neandertal-Denisovan %</h3>
-                                <p class="text-4xl font-bold text-emerald-400">2.4%</p>
-                            </div>
-                            <div>
-                                <h3 class="text-xl mb-3">Heatmap</h3>
-                                <img src="https://via.placeholder.com/600x300/1f2937/60a5fa?text=Ancestry+Heatmap" class="rounded-2xl">
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-            
-            content.innerHTML = html;
-            modal.classList.remove('hidden');
+            currentPlan = plan;
+            document.getElementById('example-modal').classList.remove('hidden');
+            switchFeature(1); // start with first feature
         }
 
         function hideExampleModal() {
             document.getElementById('example-modal').classList.add('hidden');
-            // Show payment modal
-            document.getElementById('payment-modal').classList.remove('hidden');
+        }
+
+        function switchFeature(feature) {
+            const display = document.getElementById('example-display');
+            let html = '';
+
+            if (feature === 1) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Haplogroup: R1b-M269</h3><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Haplogroup_R_%28Y-DNA%29.png" class="rounded-2xl w-full">`;
+            } else if (feature === 2) {
+                html = `<h3 class="text-2xl font-semibold mb-4">PCA Plot</h3><img src="https://via.placeholder.com/700x400/1f2937/60a5fa?text=PCA+Plot+Example" class="rounded-2xl w-full">`;
+            } else if (feature === 3) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Neolithic DNA</h3><img src="https://via.placeholder.com/700x300/1f2937/60a5fa?text=Neolithic+Ancestry" class="rounded-2xl w-full">`;
+            } else if (feature === 4) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Bronze Age</h3><img src="https://via.placeholder.com/700x300/1f2937/60a5fa?text=Bronze+Age+Ancestry" class="rounded-2xl w-full">`;
+            } else if (feature === 5) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Modern Ancestry</h3><img src="https://via.placeholder.com/700x300/1f2937/60a5fa?text=Modern+Ancestry" class="rounded-2xl w-full">`;
+            } else if (feature === 6) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Closest Populations</h3><p class="text-lg">Irish, Scottish, English, German</p>`;
+            } else if (feature === 7) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Facial Analysis</h3><img src="https://via.placeholder.com/700x400/1f2937/60a5fa?text=Facial+Analysis+Example" class="rounded-2xl w-full">`;
+            } else if (feature === 8) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Neandertal-Denisovan %</h3><p class="text-6xl font-bold text-amber-400">2.4%</p>`;
+            } else if (feature === 9) {
+                html = `<h3 class="text-2xl font-semibold mb-4">Ancestry Heatmap</h3><img src="https://via.placeholder.com/700x400/1f2937/60a5fa?text=Heatmap" class="rounded-2xl w-full">`;
+            }
+
+            display.innerHTML = html;
         }
 
         function hidePaymentModal() {
             document.getElementById('payment-modal').classList.add('hidden');
         }
 
-        // Your existing showRootModal and showMtModal functions (copy them from your last file here)
-        // ... paste the full showRootModal and showMtModal from your uploaded file
+        // Paste your full showRootModal and showMtModal functions here from your last file
+        // (they remain unchanged)
 
         tailwind.config = { content: [], theme: { extend: {} } };
     </script>
